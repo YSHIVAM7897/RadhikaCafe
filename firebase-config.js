@@ -1,13 +1,13 @@
 // Firebase Configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAP9wrNYo4IqXO1fV3ZavNNIcVRItnc4qc",
-    authDomain: "test-f048a.firebaseapp.com",
-    databaseURL: "https://test-f048a-default-rtdb.firebaseio.com",
-    projectId: "test-f048a",
-    storageBucket: "test-f048a.firebasestorage.app",
-    messagingSenderId: "189044668377",
-    appId: "1:189044668377:web:65566dd26170fa8f714bc8",
-    measurementId: "G-KH7S9T84V3"
+    apiKey: "AIzaSyAEnEXoKjRG6rsppjkTQp7wgO2-d5F69ws",
+    authDomain: "radhika-cafe.firebaseapp.com",
+    databaseURL: "https://radhika-cafe-default-rtdb.firebaseio.com",
+    projectId: "radhika-cafe",
+    storageBucket: "radhika-cafe.firebasestorage.app",
+    messagingSenderId: "524293061829",
+    appId: "1:524293061829:web:e0431056ef98caea3944ac",
+    measurementId: "G-Q8HC4F0K0Z"
 };
 
 // Initialize Firebase
