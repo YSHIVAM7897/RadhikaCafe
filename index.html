@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Ordering System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <div class="welcome-content">
+                <h1>Welcome back to<br> Radhika Cafe</h1>
+                <p>Please enter your table number to continue</p>
+                <div class="table-input">
+                    <input type="number" id="table-number" placeholder="Table Number" min="1" required>
+                    <button id="start-order-btn" type="button" class="primary-btn">Start Order</button>
+                </div>
+                <div class="staff-login-container">
+                    <a href="#" id="staff-login-link" class="staff-login-link">Login as Staff</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen">
+            <div class="login-content">
+                <h1>Staff Login</h1>
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="primary-btn">Login</button>
+                </form>
+                <button id="back-to-welcome" class="secondary-btn">Back</button>
+            </div>
+        </div>
+
+        <!-- Menu Screen -->
+        <div id="menu-screen" class="screen">
+            <header>
+                <h1>Radhika Cafe</h1>
+                <div class="header-actions">
+                    <div class="filter-container">
+                        <button id="filter-btn" class="filter-btn">Filter: All</button>
+                        <div id="category-dropdown" class="category-dropdown">
+                            <!-- Categories will be added here dynamically -->
+                        </div>
+                    </div>
+                    <div class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">0</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="menu-items" id="menu-items">
+                <!-- Menu items will be added here dynamically -->
+            </div>
+        </div>
+
+        <!-- Cart Screen -->
+        <div id="cart-screen" class="screen">
+            <header>
+                <button id="back-to-menu" class="back-btn"><i class="fas fa-arrow-left"></i></button>
+                <h1>Your Order</h1>
+            </header>
+
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+
+            <div class="cart-summary">
+                <div class="total">
+                    <span>Total:</span>
+                    <span id="cart-total">₹0</span>
+                </div>
+                <button id="place-order-btn">Place Order</button>
+            </div>
+        </div>
+
+        <!-- Order Confirmation Screen -->
+        <div id="confirmation-screen" class="screen">
+            <div class="confirmation-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Order Placed Successfully!</h2>
+                <p>Your order has been sent to the kitchen.</p>
+                <p>Table Number: <span id="confirmation-table"></span></p>
+                <p>Order ID: <span id="confirmation-order-id"></span></p>
+                <button id="new-order-btn">Place Another Order</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <script src="menu-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
