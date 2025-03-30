@@ -2,6 +2,71 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log("DOM fully loaded");
 
+    // Login System
+    const loginContainer = document.getElementById('login-container');
+    const loginForm = document.getElementById('login-form');
+    const loginError = document.getElementById('login-error');
+    const dashboard = document.getElementById('dashboard');
+    const logoutBtn = document.getElementById('logout-btn');
+
+    // Admin credentials (in a real app, this would be handled server-side)
+    const ADMIN_USERNAME = "admin";
+    const ADMIN_PASSWORD = "cafe123";
+
+    // Check if user is already logged in
+    function checkLoginStatus() {
+        const isLoggedIn = localStorage.getItem('cafeAdminLoggedIn') === 'true';
+        if (isLoggedIn) {
+            showDashboard();
+        } else {
+            showLoginScreen();
+        }
+    }
+
+    // Show login screen
+    function showLoginScreen() {
+        loginContainer.style.display = 'flex';
+        dashboard.style.display = 'none';
+    }
+
+    // Show dashboard
+    function showDashboard() {
+        loginContainer.style.display = 'none';
+        dashboard.style.display = 'block';
+    }
+
+    // Handle login form submission
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+                // Successful login
+                localStorage.setItem('cafeAdminLoggedIn', 'true');
+                showDashboard();
+                loginError.textContent = '';
+            } else {
+                // Failed login
+                loginError.textContent = 'Invalid username or password';
+                localStorage.removeItem('cafeAdminLoggedIn');
+            }
+        });
+    }
+
+    // Handle logout
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', function() {
+            localStorage.removeItem('cafeAdminLoggedIn');
+            showLoginScreen();
+        });
+    }
+
+    // Check login status on page load
+    checkLoginStatus();
+
     // DOM Elements - Add null checks for all elements
     const ordersList = document.getElementById('orders-list');
     const statusFilter = document.getElementById('status-filter');

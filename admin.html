@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant Management Dashboard</title>
-    <link rel="icon"  href="coffee.png">
+    <link rel="icon" href="coffee.png">
     <link rel="stylesheet" href="admin-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Add this to show a loading indicator while the page loads -->
@@ -67,7 +67,6 @@
             cursor: pointer;
         }
     </style>
-
 </head>
 <body>
     <!-- Page loader -->
@@ -75,9 +74,36 @@
         <div class="loader"></div>
     </div>
 
-    <div class="dashboard">
+    <!-- Login Screen -->
+    <div class="login-container" id="login-container">
+        <div class="login-form">
+            <div class="login-header">
+                <h2>Radhika Cafe Admin</h2>
+                <p>Please login to continue</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i></label>
+                    <input type="text" id="username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i></label>
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div class="login-error" id="login-error"></div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="dashboard" id="dashboard" style="display: none;">
         <header>
-            <h1>Radhika Cafe Admin Pannel</h1>
+            <div class="header-content">
+                <h1>Radhika Cafe Admin Panel</h1>
+                <button id="logout-btn" class="logout-button">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
         </header>
         
         <div class="orders-container">
