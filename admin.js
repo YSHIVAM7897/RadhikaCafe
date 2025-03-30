@@ -456,6 +456,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    // Disable F12, Ctrl+Shift+I, and Ctrl+U
+    document.addEventListener("keydown", (e) => {
+        if (
+            e.keyCode === 123 || // F12
+            (e.ctrlKey && e.shiftKey && e.keyCode === 73) || // Ctrl+Shift+I
+            (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+        ) {
+            e.preventDefault();
+        }
+    });
+    
     // Initialize the app
     init();
 });
