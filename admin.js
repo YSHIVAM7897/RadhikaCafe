@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const logoutBtn = document.getElementById('logout-btn');
 
     // Admin credentials (in a real app, this would be handled server-side)
-    const ADMIN_USERNAME = "admin";
-    const ADMIN_PASSWORD = "cafe123";
+    const ADMIN_USERNAME = "radhikaCafe@2024";
+    const ADMIN_PASSWORD = "Radhika@2024";
 
     // Check if user is already logged in
     function checkLoginStatus() {
