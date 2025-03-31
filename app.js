@@ -609,9 +609,14 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Start order button clicked");
             const tableNumber = tableNumberInput.value.trim();
             if (tableNumber) {
-                currentTableNumber = tableNumber;
-                showScreen(menuScreen);
-                selectCategory("All"); // Show all items by default
+                if(tableNumber < 10 && tableNumber > 0) {
+                    currentTableNumber = tableNumber;
+                    showScreen(menuScreen);
+                    selectCategory("All"); // Show all items by default
+                }else{
+                    alert('Please enter a valid table number (1-9)');
+
+                }
             } else {
                 alert('Please enter a table number');
             }
